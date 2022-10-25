@@ -27,6 +27,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#twitter credns
+
+API_KEY = "KArCtgq4jprlyuAnIRET5ejSh"
+API_KEY_SECRET = "FhLE2K9TCMpyLSWVZU3P2ygCcsoAegRyIQnPbtrACW1uhrRLvO"
+ACCESS_TOKEN = "1582414957060100107-08kavJWYfm2GVOqbtVSR2JJtNhJvrP"
+ACCESS_TOKEN_SECRET = "r2kKt3YevGTz2hJq1p4ZxQWaaX0OXuY98UcfbxyLQpDNg"
+
+
+
 
 # Application definition
 
@@ -79,7 +88,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "django_jobs",
         "USER" :'django_user',
-        "PASSWORD": 'absent123',
+        "PASSWORD": 'Waves@1234',
         "HOST": "",
         "PORT":""
     }
