@@ -8,7 +8,8 @@ class Post(models.Model):
     dateposted = models.CharField(max_length = 200)
     text = models.TextField()
     summarized_text = models.TextField(default = "NS")
-    likes = models.PositiveIntegerField()  
+    likes = models.PositiveIntegerField()
+    twtpost = models.BooleanField(default=False)  
 
     created_date = models.DateTimeField(default=timezone.now)
     # lst.append(dateposted)

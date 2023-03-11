@@ -57,5 +57,5 @@ class Command(BaseCommand):
 # df['ns'] = df[sum'nt'].apply(lambda x: ht(x))
 # df['hat'] = pd.DataFrame(hat)
 # res = summarizer(df['ns'], max_length=130, min_length=30, do_sample=False)[0]['summary_text']
-        self.stdout.write( 'job complete' )
+        self.stdout.write( 'summarizing job complete' )
         

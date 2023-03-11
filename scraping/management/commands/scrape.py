@@ -117,7 +117,7 @@ class Command(BaseCommand):
         dict
 
 
-        self.stdout.write( 'job complete' )
+        self.stdout.write( 'scraping job complete' )
 
         for row in range(len(td)):
             row = td.iloc[row]
@@ -131,3 +131,5 @@ class Command(BaseCommand):
         # print('%s added' % (dateposted,))
         # print('%s already exists' % (text,))
         
+        
+# time 1: kpriet_TemE641407

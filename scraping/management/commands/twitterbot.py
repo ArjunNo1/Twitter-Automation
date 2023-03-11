@@ -30,12 +30,16 @@ class Command(BaseCommand):
             # Post.objects.filter(id=post_dataframe.loc[i,'id']).update(
                 # summarized_text = post_dataframe.loc[i, 'summarized_text']
             # )
-            if post_dataframe.loc[i, 'summarized_text'] != "NS":
-                auth = tweepy.OAuthHandler(settings.API_KEY, settings.API_KEY_SECRET)
-                auth.set_access_token(settings.ACCESS_TOKEN, settings.ACCESS_TOKEN_SECRET)
-                api = tweepy.API(auth)
-                api.update_status(post_dataframe.loc[i, 'summarized_text'][0:250])
-                # str(list(post_dataframe.loc[i, 'summarized_text']).split(" ")[:10])
+            if not post_dataframe.loc[i, 'twtpost']:
+                if post_dataframe.loc[i, 'summarized_text'] != "NS":
+                    print("going to tweet")
+                    auth = tweepy.OAuthHandler(settings.API_KEY, settings.API_KEY_SECRET)
+                    auth.set_access_token(settings.ACCESS_TOKEN, settings.ACCESS_TOKEN_SECRET)
+                    api = tweepy.API(auth)
+                    api.update_status(post_dataframe.loc[i, 'summarized_text'][0:250])
+                    post_dataframe.loc[i, 'twtpost'] = True
+                    # print(post_dataframe.loc[i, 'twtpost'])
+                    # str(list(post_dataframe.loc[i, 'summarized_text']).split(" ")[:10])
 
 
 
@@ -50,5 +54,5 @@ class Command(BaseCommand):
 # df['ns'] = df[sum'nt'].apply(lambda x: ht(x))
 # df['hat'] = pd.DataFrame(hat)
 # res = summarizer(df['ns'], max_length=130, min_length=30, do_sample=False)[0]['summary_text']
-        self.stdout.write( 'job complete' )
+        self.stdout.write( 'tweet job complete' )
         
